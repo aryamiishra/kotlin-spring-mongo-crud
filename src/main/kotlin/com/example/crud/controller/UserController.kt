@@ -48,6 +48,11 @@ class UserController(
         ResponseEntity.ok(getUserService.getByAge(age))
 
 
+    @GetMapping("/by-name-age")
+    fun getByAgeAndName(@RequestParam age: Int, @RequestParam name: String) =
+        ResponseEntity.ok(getUserService.getByNameAndAge(name, age))
+
+
     @PutMapping("/{id}")
     fun update(
         @PathVariable id: String,

@@ -11,7 +11,7 @@ interface UserRepository : MongoRepository<User, String> {
     fun findByAge(age: Int): List<User>
     fun findByAgeLessThan(age: Int): List<User>
     fun findByAgeBetween(age: Int, lowerBound: Int, upperBound: Int): List<User>
-    fun findByAgeAndName(age: Int, name: String): User?
+    fun findByAgeAndName(age: Int, name: String): List<User>
     fun findByEmail(email: String): User?
 
 

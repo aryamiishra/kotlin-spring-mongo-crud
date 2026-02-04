@@ -1,4 +1,4 @@
-package com.example.crud.service
+/*package com.example.crud.service
 
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
@@ -9,4 +9,4 @@ class ReentrantLockScheduler(private val service: ReentrantLockService) {
     fun runReentrantLock(){
         service.startThreads()
     }
-}
+}*/

@@ -46,4 +46,19 @@ class GetUserService(private val userRepository: UserRepository) {
         }
     }
 
+    fun getByNameAndAge(name: String, age: Int): List<UserResponse> {
+        val users = userRepository.findByAgeAndName(age, name)
+
+        if (users.isEmpty()){
+            throw UserNotFoundException("User with name $name and $age not found")
+        }
+        return users.map { user -> UserResponse(
+                id = user.id!!,
+                name= user.name,
+                email=user.email,
+                age = user.age
+            )
+        }
+    }
+
 }
